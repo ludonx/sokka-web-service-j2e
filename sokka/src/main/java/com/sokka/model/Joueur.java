@@ -15,7 +15,7 @@ public class Joueur {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name ="idJoueur")
+	//@Column(name ="idJoueur")
 	private Long idJoueur;
 	private String idStringJoueur;
 	private String pseudoJoueur;
