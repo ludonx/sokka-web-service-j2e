@@ -1,4 +1,4 @@
-package com.sokka.service;
+package com.sokka.service.joueur;
 
 import java.util.List;
 

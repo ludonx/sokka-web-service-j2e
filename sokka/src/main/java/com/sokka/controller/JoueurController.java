@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sokka.model.Joueur;
-import com.sokka.service.JoueurService;
+import com.sokka.service.joueur.JoueurService;
 
 @RestController
 @RequestMapping(path = JoueurController.BASE_URL )
