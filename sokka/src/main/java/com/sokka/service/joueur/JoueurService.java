@@ -10,6 +10,8 @@ public interface JoueurService {
 	List<Joueur> findAllJoueur();
 	Joueur addJoueur(Joueur joueur);
 	
-	List<Joueur> findAllJoueurEquipeById(Long id);
+	List<Joueur> findJoueurEquipeById(Long id);
+	
+	Integer addJoueurToEquipe(Long idJoueur, Long idEquipe);
 
 }

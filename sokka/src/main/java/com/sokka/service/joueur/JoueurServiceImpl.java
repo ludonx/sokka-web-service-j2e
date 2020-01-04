@@ -36,9 +36,15 @@ public class JoueurServiceImpl implements JoueurService{
 	}
 	
 	@Override
-	public List<Joueur> findAllJoueurEquipeById(Long id) {
+	public List<Joueur> findJoueurEquipeById(Long id) {
 		//List<Joueur> joueurs = joueurDao.findJoueurEquipeByID_Dao(id);
-		return joueurDao.findJoueurEquipeByID_Dao(id);
+		return joueurDao.findJoueurEquipeById_Dao(id);
+	}
+
+	@Override
+	public Integer addJoueurToEquipe(Long idJoueur, Long idEquipe) {
+		
+		return joueurDao.addJoueurToEquipe_Dao(idJoueur,idEquipe);
 	}
 
 }

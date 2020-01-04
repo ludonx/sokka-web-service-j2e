@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +25,7 @@ public class JoueurController {
 	public static final String PathGetJoueurByID = "/joueur/{id}";
 	public static final String PathAddJoueur = "/joueur/add";
 	
+	public static final String PathAddJoueurToEquipe = "/joueur/equipe/add";//"/joueur/add/{idJoueur},{idEquipe}";
 	public static final String PathGetAllJoueurEquipes = "/joueur/equipe/{id}";
 
 	
@@ -46,7 +48,7 @@ public class JoueurController {
 	}
 	@GetMapping(path=JoueurController.PathGetAllJoueurEquipes)
 	public List<Joueur> getAllJoueurEquipe(@PathVariable Long id){
-		return joueurService.findAllJoueurEquipeById(id);
+		return joueurService.findJoueurEquipeById(id);
 	}
 	
 	@PostMapping(path=JoueurController.PathAddJoueur)
@@ -54,21 +56,22 @@ public class JoueurController {
 	public Joueur addJoueur(@RequestBody Joueur joueur) {
 		String idStringJoueur = joueur.getIdStringJoueur();//joueur.getIdJoueur().toString() +
 		//joueur.setIdStringJoueur(idStringJoueur);
-		System.out.print(idStringJoueur);
+		//System.out.print(idStringJoueur);
 		return joueurService.addJoueur(joueur);
+
+	}
+	
+	@PostMapping(path=JoueurController.PathAddJoueurToEquipe)
+	@ResponseStatus(HttpStatus.CREATED)
+	public String addJoueurToEquipe(@RequestParam(name = "idJoueur")String idJoueurString,@RequestParam("idEquipe")String idEquipeString) {
+		//
+		Long idJoueur = Long.parseLong(idJoueurString) ;
+		Long idEquipe = Long.parseLong(idEquipeString) ;
+		//Boolean res = 
+		Integer res = joueurService.addJoueurToEquipe(idJoueur,idEquipe);
 		
-		/*{
-			"idStringJoueur":"aze@tr.qh",
-			"emailJoueur":"postman",
-			"pseudoJoueur":"new",
-			"nomJoueur":"new",
-			"prenomJoueur":"j1Prenom",
-			"scoreEloJoueur":3,
-			"scoreFairPlayJoueur":3,
-			"dateDebutJoueur":"2019-12-27T23:50:58.000+0000",
-			"dateFinJoueur":null,
-			"estSupprimer":false
-		}*/
+		return res.toString();
+		//return "idJoueur " + idJoueurString + " idEquipe" + idEquipeString + f.toString();
 	}
 
 }
