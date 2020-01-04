@@ -2,6 +2,7 @@ package com.sokka.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,9 +24,11 @@ public class JoueurController {
 	public static final String PathGetJoueurByID = "/joueur/{id}";
 	public static final String PathAddJoueur = "/joueur/add";
 	
-	//@Autowired
-	//private JoueurService joueurService;
-	private final JoueurService joueurService;
+	public static final String PathGetAllJoueurEquipes = "/joueur/equipe/{id}";
+
+	
+	@Autowired
+	private JoueurService joueurService;
 
 	public JoueurController(JoueurService joueurService) {
 		super();
@@ -41,14 +44,22 @@ public class JoueurController {
 	public Joueur getJoueurById(@PathVariable Long id){
 		return joueurService.findJoueurById(id);
 	}
+	@GetMapping(path=JoueurController.PathGetAllJoueurEquipes)
+	public List<Joueur> getAllJoueurEquipe(@PathVariable Long id){
+		return joueurService.findAllJoueurEquipeById(id);
+	}
 	
 	@PostMapping(path=JoueurController.PathAddJoueur)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Joueur addJoueur(@RequestBody Joueur joueur) {
+		String idStringJoueur = joueur.getIdStringJoueur();//joueur.getIdJoueur().toString() +
+		//joueur.setIdStringJoueur(idStringJoueur);
+		System.out.print(idStringJoueur);
 		return joueurService.addJoueur(joueur);
 		
 		/*{
-			"idStringJoueur":"12355",
+			"idStringJoueur":"aze@tr.qh",
+			"emailJoueur":"postman",
 			"pseudoJoueur":"new",
 			"nomJoueur":"new",
 			"prenomJoueur":"j1Prenom",

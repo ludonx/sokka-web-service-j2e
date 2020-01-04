@@ -34,5 +34,11 @@ public class JoueurServiceImpl implements JoueurService{
 	public Joueur addJoueur(Joueur joueur) {
 		return joueurDao.save(joueur);
 	}
+	
+	@Override
+	public List<Joueur> findAllJoueurEquipeById(Long id) {
+		//List<Joueur> joueurs = joueurDao.findJoueurEquipeByID_Dao(id);
+		return joueurDao.findJoueurEquipeByID_Dao(id);
+	}
 
 }

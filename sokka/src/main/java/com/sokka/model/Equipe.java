@@ -1,20 +1,26 @@
 package com.sokka.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "equipes")
+@Table(name = "equipe")
 public class Equipe {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idEquipe;
 	private String idStringEquipe;
 	private String nomEquipe;
@@ -25,6 +31,18 @@ public class Equipe {
 	private Boolean estSupprimer;
 	
 	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+    joinColumns = { @JoinColumn(name = "idEquipe") },
+    inverseJoinColumns = { @JoinColumn(name = "idJoueur") })
+	private Set<Joueur> joueurs = new HashSet<>();
+	
+
+	public void addJoueur(Joueur joueur) {
+		joueurs.add(joueur);
+	}
+	
+
 	public Long getIdEquipe() {
 		return idEquipe;
 	}

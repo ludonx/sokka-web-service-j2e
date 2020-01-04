@@ -2,6 +2,7 @@ package com.sokka.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,12 +19,14 @@ import com.sokka.service.equipe.EquipeService;
 @RequestMapping(path = EquipeController.BASE_URL )
 public class EquipeController {
 	
-	public static final String BASE_URL = "/sokka/api/v1/services";
-	public static final String PathGetAllEquipes = "/equipe/all";
-	public static final String PathGetEquipeByID = "/equipe/{id}";
-	public static final String PathAddEquipe = "/equipe/add";
+	public static final String BASE_URL = "/sokka/api/v1/services/equipe";
+	public static final String PathGetAllEquipes = "/all";
+	public static final String PathGetEquipeByID = "/{id}";
+	public static final String PathAddEquipe = "/add";
 	
-	private final EquipeService equipeService;
+	
+	@Autowired
+	private EquipeService equipeService;
 
 	public EquipeController(EquipeService equipeService) {
 		super();

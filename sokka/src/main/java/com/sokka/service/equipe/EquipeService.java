@@ -9,4 +9,6 @@ public interface EquipeService {
 	Equipe findEquipeById(Long id);
 	List<Equipe> findAllEquipe();
 	Equipe addEquipe(Equipe Equipe);
+	
+	
 }
