@@ -54,7 +54,7 @@ public class JoueurController {
 	@PostMapping(path=JoueurController.PathAddJoueur)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Joueur addJoueur(@RequestBody Joueur joueur) {
-		String idStringJoueur = joueur.getIdStringJoueur();//joueur.getIdJoueur().toString() +
+		//SString idStringJoueur = joueur.getIdStringJoueur();//joueur.getIdJoueur().toString() +
 		//joueur.setIdStringJoueur(idStringJoueur);
 		//System.out.print(idStringJoueur);
 		return joueurService.addJoueur(joueur);
@@ -67,11 +67,11 @@ public class JoueurController {
 		//
 		Long idJoueur = Long.parseLong(idJoueurString) ;
 		Long idEquipe = Long.parseLong(idEquipeString) ;
-		//Boolean res = 
+		String msg; 
 		Integer res = joueurService.addJoueurToEquipe(idJoueur,idEquipe);
-		
-		return res.toString();
-		//return "idJoueur " + idJoueurString + " idEquipe" + idEquipeString + f.toString();
+		if(res == 1 )msg = "le Joueur d'id : " + idJoueurString + " a été ajouté à l'équipe d'id : " + idEquipeString ;
+		else msg = "Ajout Impossible !";
+		return msg;
 	}
 
 }
