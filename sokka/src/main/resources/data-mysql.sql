@@ -1,5 +1,25 @@
-delete from joueur where upper(idStringJoueur) = "SPRINGBOOTMYSQL" ;
-delete from equipe where upper(idStringEquipe) = "SPRINGBOOTMYSQL" ;
+---------- * DELETE DATA
+
+--delete from joueur where upper(idStringJoueur) = "SPRINGBOOTMYSQL" ;
+--delete from equipe where upper(idStringEquipe) = "SPRINGBOOTMYSQL" ;
+
+---------- * DROP TABLES
+--use sokka;
+
+SET foreign_key_checks = 0;
+drop table IF EXISTS equipe_categorie;
+drop table IF EXISTS equipe_joueur;
+drop table IF EXISTS equipe;
+drop table IF EXISTS joueur;
+drop table IF EXISTS tempsfort;
+drop table IF EXISTS actions;
+drop table IF EXISTS categorie;
+drop table IF EXISTS matchs;
+drop table IF EXISTS terrain;
+SET foreign_key_checks = 1;
+
+
+
 ---------- JOUEUR
 INSERT INTO joueur(emailJoueur,  pwdJoueur,  idStringJoueur,
 pseudoJoueur,  nomJoueur, prenomJoueur,
@@ -22,4 +42,18 @@ dateDebutEquipe, dateFinEquipe, estSupprimer)
 VALUES
 ("springBootMysql","equipe_1",true,"2019-11-24",null,false),
 ("springBootMysql","equipe_2",true,"2018-11-24",null,false);
+
+
+---------- ACTIONS
+INSERT INTO actions (nomAction)
+VALUES 
+("but"),
+("carton jaune"),
+("carton rouge"),
+("faut"),
+("penalty");
+
+---------- CATEGORIE
+INSERT INTO categorie (nomCategorie)
+VALUES ("7/7"),("5/5"),("11/11");
 

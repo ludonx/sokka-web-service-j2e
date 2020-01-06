@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -37,6 +38,14 @@ public class Equipe {
     inverseJoinColumns = { @JoinColumn(name = "idJoueur") })
 	private Set<Joueur> joueurs = new HashSet<>();
 	
+	@OneToMany(mappedBy = "idEquipe", cascade = CascadeType.ALL)
+    private Set<EquipeCategorie> equipeCategorie;
+	
+	@OneToMany(mappedBy = "equipeDomicile", cascade = CascadeType.ALL)
+    private Set<Match> matchEquipeDomicile;
+	
+	@OneToMany(mappedBy = "equipeExterieur", cascade = CascadeType.ALL)
+    private Set<Match> matchEquipeExterieur;
 
 	public void addJoueur(Joueur joueur) {
 		joueurs.add(joueur);

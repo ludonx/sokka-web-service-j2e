@@ -64,7 +64,6 @@ public class JoueurController {
 	@PostMapping(path=JoueurController.PathAddJoueurToEquipe)
 	@ResponseStatus(HttpStatus.CREATED)
 	public String addJoueurToEquipe(@RequestParam(name = "idJoueur")String idJoueurString,@RequestParam("idEquipe")String idEquipeString) {
-		//
 		Long idJoueur = Long.parseLong(idJoueurString) ;
 		Long idEquipe = Long.parseLong(idEquipeString) ;
 		String msg; 
