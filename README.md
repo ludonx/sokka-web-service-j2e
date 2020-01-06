@@ -4,13 +4,13 @@ Projet de fin d'étude : développement d'une API
 Spring Boot - JPA - hibernate - MySQL 
 
 ## UTILISER L'API
->host local : http://localhost
->host distant :
->port : 8080
->BASE_URL : /sokka/api/v1/services
+- >host local : http://localhost
+- >host distant :
+- >port : 8080
+- >BASE_URL : /sokka/api/v1/services
 
 - Comment consulter l'API ?
-    {host local}:{port}/{TABLE}/{METHODE}
+    **{host local}:{port}/{TABLE}/{METHODE}**
 
 
 - EXEMPLE :
@@ -21,7 +21,7 @@ Spring Boot - JPA - hibernate - MySQL
 
 
 - METHODE
-    * GET
+    * ** * GET * **
 
     | TABLE | GET                   | Description               | 
     | ----  | ----                  | ----                      |
@@ -33,7 +33,7 @@ Spring Boot - JPA - hibernate - MySQL
     |equipe	| /{id}                 | equipe qui à l'id x       |
     |equipe	| ----                  | ----                      |
 
-    * POST
+    * ** * POST * **
 
     | TABLE | POST                  | Description               | 
     | ----  | ----                  | ----                      |
@@ -48,6 +48,11 @@ Spring Boot - JPA - hibernate - MySQL
 
 0. sokka/target/sokka-0.0.1-SNAPSHOT.jar
 1. avoir Mysql 
+    * ajouter un utilisateur `sokka` avec pour mot de passe `sokka` 
+     >GRANT ALL PRIVILEGES ON *.* TO 'sokka'@'localhost' IDENTIFIED BY 'sokka';
+    * puis crée une base de donné avec le nom `sokka`
+        - >sudo mysql -u sokka -p
+        - >CREATE DATABASE sokka;
 2. avoir JDK
 3. aller sur google (execute a jar file on linux (or windows) ) 
 4. ajouter des données pour faire des testes ( vous pouvez utiliser le fichier data-mysql.sql dans le repertoire ..../resources/data-mysql.sql)
