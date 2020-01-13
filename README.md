@@ -4,20 +4,23 @@ Projet de fin d'étude : développement d'une API
 Spring Boot - JPA - hibernate - MySQL 
 
 ## UTILISER L'API
-- >host local : http://localhost
+- >host_local : http://localhost
+- >host_local : http://ec2-35-180-211-40.eu-west-3.compute.amazonaws.com
 - >host distant :
 - >port : 8080
 - >BASE_URL : /sokka/api/v1/services
 
 - Comment consulter l'API ?
-    **{host local}:{port}/{TABLE}/{METHODE}**
+    **{host_local ou host_distant}:{port}/{BASE_URL}/{TABLE}/{METHODE}**
 
 
 - EXEMPLE :
-
+1. local
     * http://localhost:8080/sokka/api/v1/services/joueur/equipe/1
     * http://localhost:8080/sokka/api/v1/services/joueur/all
     * http://localhost:8080/sokka/api/v1/services/joueur/equipe/add?idJoueur=1&idEquipe=2
+2. distant
+    * http://ec2-35-180-211-40.eu-west-3.compute.amazonaws.com:8080/sokka/api/v1/services/joueur/all
 
 
 - METHODE
