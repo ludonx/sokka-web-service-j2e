@@ -5,7 +5,7 @@ Spring Boot - JPA - hibernate - MySQL
 
 ## UTILISER L'API
 - >host_local : http://localhost
-- >host_local : http://ec2-35-180-211-40.eu-west-3.compute.amazonaws.com
+- >host_distant : http://ec2-35-180-211-40.eu-west-3.compute.amazonaws.com
 - >host distant :
 - >port : 8080
 - >BASE_URL : /sokka/api/v1/services
@@ -24,7 +24,7 @@ Spring Boot - JPA - hibernate - MySQL
 
 
 - METHODE
-    * ** * GET * **
+    * ***GET***
 
     | TABLE | GET                   | Description               | 
     | ----  | ----                  | ----                      |
@@ -36,7 +36,7 @@ Spring Boot - JPA - hibernate - MySQL
     |equipe	| /{id}                 | equipe qui à l'id x       |
     |equipe	| ----                  | ----                      |
 
-    * ** * POST * **
+    * ***POST***
 
     | TABLE | POST                  | Description               | 
     | ----  | ----                  | ----                      |
@@ -62,3 +62,5 @@ Spring Boot - JPA - hibernate - MySQL
 
 * [Export jar](https://www.youtube.com/watch?v=qDTUYkaXAEc).
 * [Execute jar Ubuntu](https://askubuntu.com/questions/101746/how-can-i-execute-a-jar-file-from-the-terminal)
+
+
