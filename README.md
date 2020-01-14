@@ -3,12 +3,6 @@ Projet de fin d'étude : développement d'une API
 
 Spring Boot - JPA - hibernate - MySQL 
 
-## Sommaire
-
-- [UTILISATION](#UTILISER L'API)
-- [EXECUTION](#EXECUTER L'API EN LOCAL avec le fichier JAR  (vous avez juste besoin du fichier .jar):
-)
-
 
 ## UTILISER L'API
 - >host_local : http://localhost
