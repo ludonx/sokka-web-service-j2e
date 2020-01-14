@@ -3,6 +3,13 @@ Projet de fin d'étude : développement d'une API
 
 Spring Boot - JPA - hibernate - MySQL 
 
+## Sommaire
+
+- [UTILISATION](#UTILISER L'API)
+- [EXECUTION](#EXECUTER L'API EN LOCAL avec le fichier JAR  (vous avez juste besoin du fichier .jar):
+)
+
+
 ## UTILISER L'API
 - >host_local : http://localhost
 - >host_distant : http://ec2-35-180-211-40.eu-west-3.compute.amazonaws.com
@@ -60,7 +67,7 @@ Spring Boot - JPA - hibernate - MySQL
 3. aller sur google (execute a jar file on linux (or windows) ) 
 4. ajouter des données pour faire des testes ( vous pouvez utiliser le fichier data-mysql.sql dans le repertoire ..../resources/data-mysql.sql)
 
-* [Export jar](https://www.youtube.com/watch?v=qDTUYkaXAEc).
+* [Export jar](https://www.youtube.com/watch?v=qDTUYkaXAEc)
 * [Execute jar Ubuntu](https://askubuntu.com/questions/101746/how-can-i-execute-a-jar-file-from-the-terminal)
 
 
