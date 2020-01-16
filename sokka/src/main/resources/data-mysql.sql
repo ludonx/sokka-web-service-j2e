@@ -24,7 +24,7 @@ SET foreign_key_checks = 1;
 INSERT INTO joueur(emailJoueur,  pwdJoueur,  idStringJoueur,
 pseudoJoueur,  nomJoueur, prenomJoueur,
 scoreEloJoueur,  scoreFairPlayJoueur,
-dateDebutJoueur,dateFinJoueur,  estSupprimer)
+dateDebutJoueur,dateFinJoueur,  estSupprime)
 VALUES
 ("joueur_1@sokka.fr","pwd_1","springBootMysql",
 "pseudo_1","joueur_1","prenom_1",
@@ -38,7 +38,7 @@ SYSDATE(),null,false),
 
 ---------- EQUIPE
 INSERT INTO equipe (idStringEquipe, nomEquipe, estDispoPourMatch,
-dateDebutEquipe, dateFinEquipe, estSupprimer)
+dateDebutEquipe, dateFinEquipe, estSupprime)
 VALUES
 ("springBootMysql","equipe_1",true,"2019-11-24",null,false),
 ("springBootMysql","equipe_2",true,"2018-11-24",null,false);

@@ -29,7 +29,7 @@ public class Equipe {
 
 	private Date dateDebutEquipe;
 	private Date dateFinEquipe;
-	private Boolean estSupprimer;
+	private Boolean estSupprime;
 	
 	
 	@ManyToMany(cascade = CascadeType.ALL)
@@ -88,11 +88,11 @@ public class Equipe {
 	public void setDateFinEquipe(Date dateFinEquipe) {
 		this.dateFinEquipe = dateFinEquipe;
 	}
-	public Boolean getEstSupprimer() {
-		return estSupprimer;
+	public Boolean getestSupprime() {
+		return estSupprime;
 	}
-	public void setEstSupprimer(Boolean estSupprimer) {
-		this.estSupprimer = estSupprimer;
+	public void setestSupprime(Boolean estSupprime) {
+		this.estSupprime = estSupprime;
 	}
 	
 	

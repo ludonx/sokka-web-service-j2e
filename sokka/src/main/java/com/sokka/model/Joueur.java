@@ -35,7 +35,7 @@ public class Joueur {
 
 	private Date dateDebutJoueur;
 	private Date dateFinJoueur;
-	private Boolean estSupprimer;
+	private Boolean estSupprime;
 	
 	
 	@ManyToMany(mappedBy = "joueurs")
@@ -55,7 +55,7 @@ public class Joueur {
 
 	public Joueur(String emailJoueur, String pwdJoueur, String idStringJoueur, String pseudoJoueur, String nomJoueur,
 			String prenomJoueur, Long scoreEloJoueur, Long scoreFairPlayJoueur, Date dateDebutJoueur,
-			Date dateFinJoueur, Boolean estSupprimer) {
+			Date dateFinJoueur, Boolean estSupprime) {
 		super();
 		this.emailJoueur = emailJoueur;
 		this.pwdJoueur = pwdJoueur;
@@ -67,7 +67,7 @@ public class Joueur {
 		this.scoreFairPlayJoueur = scoreFairPlayJoueur;
 		this.dateDebutJoueur = dateDebutJoueur;
 		this.dateFinJoueur = dateFinJoueur;
-		this.estSupprimer = estSupprimer;
+		this.estSupprime = estSupprime;
 	}
 	
 	public Long getIdJoueur() {
@@ -140,11 +140,11 @@ public class Joueur {
 	public void setDateFinJoueur(Date dateFinJoueur) {
 		this.dateFinJoueur = dateFinJoueur;
 	}
-	public Boolean getEstSupprimer() {
-		return estSupprimer;
+	public Boolean getestSupprime() {
+		return estSupprime;
 	}
-	public void setEstSupprimer(Boolean estSupprimer) {
-		this.estSupprimer = estSupprimer;
+	public void setestSupprime(Boolean estSupprime) {
+		this.estSupprime = estSupprime;
 	}
 	
 	

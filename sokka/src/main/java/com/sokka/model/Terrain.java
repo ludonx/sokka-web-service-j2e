@@ -33,7 +33,7 @@ public class Terrain {
 	
 	private Date dateDebutTerrain;
 	private Date dateFinTerrain;
-	private Boolean estSupprimer;
+	private Boolean estSupprime;
 	
 	@OneToMany(mappedBy = "terrain", cascade = CascadeType.ALL)
     private Set<Match> match;
@@ -110,11 +110,11 @@ public class Terrain {
 	public void setDateFinTerrain(Date dateFinTerrain) {
 		this.dateFinTerrain = dateFinTerrain;
 	}
-	public Boolean getEstSupprimer() {
-		return estSupprimer;
+	public Boolean getestSupprime() {
+		return estSupprime;
 	}
-	public void setEstSupprimer(Boolean estSupprimer) {
-		this.estSupprimer = estSupprimer;
+	public void setestSupprime(Boolean estSupprime) {
+		this.estSupprime = estSupprime;
 	}
 	
 	
