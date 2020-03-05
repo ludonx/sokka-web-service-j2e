@@ -1,6 +1,6 @@
 package com.sokka.model;
 
-import java.util.Date;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -33,8 +33,6 @@ public class Joueur {
 	private Long scoreEloJoueur;
 	private Long scoreFairPlayJoueur;
 
-	private Date dateDebutJoueur;
-	private Date dateFinJoueur;
 	private Boolean estSupprime;
 	
 	
@@ -54,8 +52,7 @@ public class Joueur {
 	}
 
 	public Joueur(String emailJoueur, String pwdJoueur, String idStringJoueur, String pseudoJoueur, String nomJoueur,
-			String prenomJoueur, Long scoreEloJoueur, Long scoreFairPlayJoueur, Date dateDebutJoueur,
-			Date dateFinJoueur, Boolean estSupprime) {
+			String prenomJoueur, Long scoreEloJoueur, Long scoreFairPlayJoueur,Boolean estSupprime) {
 		super();
 		this.emailJoueur = emailJoueur;
 		this.pwdJoueur = pwdJoueur;
@@ -65,8 +62,7 @@ public class Joueur {
 		this.prenomJoueur = prenomJoueur;
 		this.scoreEloJoueur = scoreEloJoueur;
 		this.scoreFairPlayJoueur = scoreFairPlayJoueur;
-		this.dateDebutJoueur = dateDebutJoueur;
-		this.dateFinJoueur = dateFinJoueur;
+
 		this.estSupprime = estSupprime;
 	}
 	
@@ -128,18 +124,7 @@ public class Joueur {
 	public void setScoreFairPlayJoueur(Long scoreFairPlayJoueur) {
 		this.scoreFairPlayJoueur = scoreFairPlayJoueur;
 	}
-	public Date getDateDebutJoueur() {
-		return dateDebutJoueur;
-	}
-	public void setDateDebutJoueur(Date dateDebutJoueur) {
-		this.dateDebutJoueur = dateDebutJoueur;
-	}
-	public Date getDateFinJoueur() {
-		return dateFinJoueur;
-	}
-	public void setDateFinJoueur(Date dateFinJoueur) {
-		this.dateFinJoueur = dateFinJoueur;
-	}
+
 	public Boolean getestSupprime() {
 		return estSupprime;
 	}

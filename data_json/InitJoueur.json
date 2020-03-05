@@ -1,0 +1,30 @@
+[
+  {
+    "idStringJoueur":"restClient",
+    "pseudoJoueur":"messi",
+    "nomJoueur":"j1Nom",
+    "prenomJoueur":"j1Prenom",
+    "scoreEloJoueur":3,
+    "scoreFairPlayJoueur":3,
+    "estSupprimer":false
+  },
+  {
+    "idStringJoueur":"restClient",
+    "pseudoJoueur":"2",
+    "nomJoueur":"2",
+    "prenomJoueur":"2",
+    "scoreEloJoueur":2,
+    "scoreFairPlayJoueur":2,
+    "estSupprimer":true
+  },
+  {
+    "idStringJoueur":"restClient",
+    "emailJoueur":"postman",
+    "pseudoJoueur":"new",
+    "nomJoueur":"new",
+    "prenomJoueur":"j1Prenom",
+    "scoreEloJoueur":3,
+    "scoreFairPlayJoueur":3,
+    "estSupprime":false
+  }
+]

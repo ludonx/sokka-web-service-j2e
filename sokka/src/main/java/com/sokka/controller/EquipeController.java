@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -23,6 +24,9 @@ public class EquipeController {
 	public static final String PathGetAllEquipes = "/all";
 	public static final String PathGetEquipeByID = "/{id}";
 	public static final String PathAddEquipe = "/add";
+	public static final String PathAddListEquipe = "/add/list";
+	
+	public static final String PathUpdateEquipe = "/update";
 	
 	
 	@Autowired
@@ -47,6 +51,24 @@ public class EquipeController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public Equipe addEquipe(@RequestBody Equipe Equipe) {
 		return equipeService.addEquipe(Equipe);
+		
+	}
+	@PostMapping(path=EquipeController.PathAddListEquipe)
+	@ResponseStatus(HttpStatus.CREATED)
+	public List<Equipe> addEquipe(@RequestBody List<Equipe> Equipes) {
+		return equipeService.addEquipe(Equipes);
+		
+	}
+	
+	@PutMapping(path=EquipeController.PathUpdateEquipe)
+	@ResponseStatus(HttpStatus.CREATED)
+	public String updateEquipe(@RequestBody Equipe Equipe) {
+		String msg =  "L'equipe d'id [" +Equipe.getIdEquipe() +"] n'existe pas !"; 
+		if(equipeService.existsEquipeById(Equipe.getIdEquipe())) {
+			equipeService.addEquipe(Equipe);
+			msg = "Modification effectuée !";
+		}
+		return msg;
 		
 	}
 	

@@ -1,6 +1,5 @@
 package com.sokka.model;
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,8 +26,6 @@ public class Equipe {
 	private String nomEquipe;
 	private Boolean estDispoPourMatch;
 
-	private Date dateDebutEquipe;
-	private Date dateFinEquipe;
 	private Boolean estSupprime;
 	
 	
@@ -76,23 +73,32 @@ public class Equipe {
 	public void setEstDispoPourMatch(Boolean estDispoPourMatch) {
 		this.estDispoPourMatch = estDispoPourMatch;
 	}
-	public Date getDateDebutEquipe() {
-		return dateDebutEquipe;
-	}
-	public void setDateDebutEquipe(Date dateDebutEquipe) {
-		this.dateDebutEquipe = dateDebutEquipe;
-	}
-	public Date getDateFinEquipe() {
-		return dateFinEquipe;
-	}
-	public void setDateFinEquipe(Date dateFinEquipe) {
-		this.dateFinEquipe = dateFinEquipe;
-	}
+
 	public Boolean getestSupprime() {
 		return estSupprime;
 	}
 	public void setestSupprime(Boolean estSupprime) {
 		this.estSupprime = estSupprime;
+	}
+
+
+	public Set<Joueur> getJoueurs() {
+		return joueurs;
+	}
+
+
+	public void setJoueurs(Set<Joueur> joueurs) {
+		this.joueurs = joueurs;
+	}
+
+
+	public Set<EquipeCategorie> getEquipeCategorie() {
+		return equipeCategorie;
+	}
+
+
+	public void setEquipeCategorie(Set<EquipeCategorie> equipeCategorie) {
+		this.equipeCategorie = equipeCategorie;
 	}
 	
 	

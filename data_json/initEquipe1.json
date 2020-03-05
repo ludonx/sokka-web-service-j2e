@@ -1,0 +1,14 @@
+[
+	{
+		"idStringEquipe":"restClient",
+		"nomEquipe":"Barca",
+		"estDispoPourMatch":false,
+		"estSupprime":false
+	},
+	{
+		"idStringEquipe":"restClient",
+		"nomEquipe":"Real",
+		"estDispoPourMatch":false,
+		"estSupprime":false
+	}
+]

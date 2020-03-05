@@ -50,16 +50,16 @@ Spring Boot - JPA - hibernate - MySQL
 
 ##  EXECUTER L'API EN LOCAL avec le fichier JAR  (vous avez juste besoin du fichier .jar):
 
-0. sokka/target/sokka-0.0.1-SNAPSHOT.jar
-1. avoir Mysql 
-    * ajouter un utilisateur `sokka` avec pour mot de passe `sokka` 
-     >GRANT ALL PRIVILEGES ON *.* TO 'sokka'@'localhost' IDENTIFIED BY 'sokka';
-    * puis crée une base de donné avec le nom `sokka`
-        - >sudo mysql -u sokka -p
-        - >CREATE DATABASE sokka;
-2. avoir JDK
-3. aller sur google (execute a jar file on linux (or windows) ) 
-4. ajouter des données pour faire des testes ( vous pouvez utiliser le fichier data-mysql.sql dans le repertoire ..../resources/data-mysql.sql)
+    0. sokka/target/sokka-0.0.1-SNAPSHOT.jar
+    1. avoir Mysql 
+        * ajouter un utilisateur `sokka` avec pour mot de passe `sokka` 
+         >GRANT ALL PRIVILEGES ON *.* TO 'sokka'@'localhost' IDENTIFIED BY 'sokka';
+        * puis crée une base de donné avec le nom `sokka`
+            - >sudo mysql -u sokka -p
+            - >CREATE DATABASE sokka;
+    2. avoir JDK
+    3. aller sur google (execute a jar file on linux (or windows) ) 
+    4. ajouter des données pour faire des testes ( vous pouvez utiliser le fichier data-mysql.sql dans le repertoire ..../resources/data-mysql.sql)
 
 * [Export jar](https://www.youtube.com/watch?v=qDTUYkaXAEc)
 * [Execute jar Ubuntu](https://askubuntu.com/questions/101746/how-can-i-execute-a-jar-file-from-the-terminal)

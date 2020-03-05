@@ -35,6 +35,16 @@ public class EquipeServiceImpl implements  EquipeService {
 		return equipeDao.save(Equipe);
 	}
 
+	@Override
+	public List<Equipe> addEquipe(List<Equipe> Equipes) {
+		return equipeDao.saveAll(Equipes);
+	}
+
+	@Override
+	public boolean existsEquipeById(Long id) {
+		return equipeDao.existsById(id);
+	}
+
 
 	
 

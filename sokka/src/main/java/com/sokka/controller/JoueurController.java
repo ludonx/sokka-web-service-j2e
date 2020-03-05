@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,23 +15,30 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sokka.model.Joueur;
+import com.sokka.model.historique.JoueurHistorique;
 import com.sokka.service.joueur.JoueurService;
+import com.sokka.service.joueur.historique.JoueurHistoriqueService;
 
 @RestController
 @RequestMapping(path = JoueurController.BASE_URL )
 public class JoueurController {
 	
-	public static final String BASE_URL = "/sokka/api/v1/services";
-	public static final String PathGetAllJoueurs = "/joueur/all";
-	public static final String PathGetJoueurByID = "/joueur/{id}";
-	public static final String PathAddJoueur = "/joueur/add";
+	public static final String BASE_URL = "/sokka/api/v1/services/joueur";
+	public static final String PathGetAllJoueurs = "/all";
+	public static final String PathGetJoueurByID = "/{id}";
+	public static final String PathAddJoueur = "/add";
+	public static final String PathAddListJoueur = "/add/list";
 	
-	public static final String PathAddJoueurToEquipe = "/joueur/equipe/add";//"/joueur/add/{idJoueur},{idEquipe}";
-	public static final String PathGetAllJoueurEquipes = "/joueur/equipe/{id}";
+	
+	public static final String PathAddJoueurToEquipe = "/equipe/add";//"/joueur/add/{idJoueur},{idEquipe}";
+	public static final String PathGetAllJoueurEquipes = "/equipe/{id}";
 
+	public static final String PathUpdateJoueur = "/update";
 	
 	@Autowired
 	private JoueurService joueurService;
+	@Autowired
+	private JoueurHistoriqueService joueurHistoriqueService;
 
 	public JoueurController(JoueurService joueurService) {
 		super();
@@ -54,11 +62,13 @@ public class JoueurController {
 	@PostMapping(path=JoueurController.PathAddJoueur)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Joueur addJoueur(@RequestBody Joueur joueur) {
-		//SString idStringJoueur = joueur.getIdStringJoueur();//joueur.getIdJoueur().toString() +
-		//joueur.setIdStringJoueur(idStringJoueur);
-		//System.out.print(idStringJoueur);
 		return joueurService.addJoueur(joueur);
-
+	}
+	
+	@PostMapping(path=JoueurController.PathAddListJoueur)
+	@ResponseStatus(HttpStatus.CREATED)
+	public List<Joueur> addListJoueur(@RequestBody List<Joueur> joueurs) {
+		return joueurService.addJoueur(joueurs);
 	}
 	
 	@PostMapping(path=JoueurController.PathAddJoueurToEquipe)
@@ -70,6 +80,21 @@ public class JoueurController {
 		Integer res = joueurService.addJoueurToEquipe(idJoueur,idEquipe);
 		if(res == 1 )msg = "le Joueur d'id : " + idJoueurString + " a été ajouté à l'équipe d'id : " + idEquipeString ;
 		else msg = "Ajout Impossible !";
+		return msg;
+	}
+	
+	@PutMapping(path=JoueurController.PathUpdateJoueur)
+	@ResponseStatus(HttpStatus.CREATED)
+	public String updateJoueur(@RequestBody Joueur joueur) {
+		String msg = "Le joueur d'id [" +joueur.getIdJoueur() +"] n'existe pas !"; 
+		if(joueurService.existsJoueurById(joueur.getIdJoueur())) {
+			// on fait une sauvegarde avant de modifier
+			JoueurHistorique joueurHistorique = new JoueurHistorique(joueur);
+			joueurHistoriqueService.addJoueurHistorique(joueurHistorique);
+			
+			joueurService.addJoueur(joueur);
+			msg = "Modification effectuée !";
+		}
 		return msg;
 	}
 
